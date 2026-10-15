@@ -1,0 +1,591 @@
+{
+ "CLINCStreamSim": {
+  "win_len": [60],
+  "steps": [30],
+
+    "state_logic": ["cosine", "kld"],
+  "kld_epsilon": [0.0002],
+  "max_state_num": [160],
+
+  "l_hist_size": [80],
+  "l_new_size": [5],
+  "ks_hist_min_size": [50],
+  "ks_alpha": [0.001,0.0025, 0.005],
+
+  "mmd_l_hist_size": [80],
+  "mmd_l_new_size": [3],
+  "mmd_hist_min_size": [50],
+  "mmd_alpha": [0.001,0.0025, 0.005],
+  "lambda_mmd": [0.001],
+
+  "energy_l_hist_size": [80],
+  "energy_l_new_size": [3],
+  "energy_hist_min_size": [50],
+  "energy_alpha": [0.01,0.025, 0.05],
+  "lambda_energy": [0.001],
+
+  "normalize_for_detectors": [true],
+
+  "state_sim_threshold": [0.86],
+  "state_update_alpha": [0.05],
+
+  "merge_every": [100],
+  "merge_threshold": [0.95],
+  "min_state_windows": [10],
+
+  "pointwise_tolerance_k": [0],
+  "alarm_cooldown_k": [0],
+
+  "event_tolerance_k": [3],
+  "event_window_W": [15],
+  "event_fp_penalty": [0.11],
+  "state_penalty_lambda": [1.0],
+
+  "hidden_size": [128],
+  "epochs": [10],
+  "lr": [0.0001],
+  "dropout": [0.2],
+  "batch_size": [32],
+  "weight_decay": [1e-05],
+  "dim": [384],
+  "early_stopping_patience": [5]
+},
+  "AGNewsStreamSim": {
+  "win_len": [80],
+  "steps": [50],
+
+  "state_logic": ["cosine", "kld"],
+  "kld_epsilon": [0.0006],
+  "max_state_num": [50],
+
+  "l_hist_size": [80],
+"l_new_size": [1],
+"ks_hist_min_size": [80],
+"ks_alpha": [0.001, 0.0025, 0.005],
+
+
+  "mmd_l_hist_size": [80],
+  "mmd_l_new_size": [3],
+  "mmd_hist_min_size": [50],
+  "mmd_alpha": [0.001,0.0025, 0.005],
+  "lambda_mmd": [0.001],
+
+  "energy_l_hist_size": [80],
+  "energy_l_new_size": [5,3,2],
+  "energy_hist_min_size": [50],
+  "energy_alpha": [0.01,0.025, 0.05],
+  "lambda_energy": [0.001],
+
+  "normalize_for_detectors": [false],
+
+  "state_sim_threshold": [0.75],
+  "state_update_alpha": [0.05],
+
+  "merge_every": [30],
+  "merge_threshold": [0.85],
+  "min_state_windows": [5],
+
+  "pointwise_tolerance_k": [2],
+  "alarm_cooldown_k": [0],
+
+  "event_tolerance_k": [5],
+  "event_window_W": [15],
+  "event_fp_penalty": [0.11],
+  "state_penalty_lambda": [1.0],
+
+  "hidden_size": [128],
+  "epochs": [10],
+  "lr": [0.0001],
+  "dropout": [0.2],
+  "batch_size": [32],
+  "weight_decay": [1e-05],
+  "dim": [384],
+  "early_stopping_patience": [5]
+},
+ 
+  "GaliboStreamSim": {
+  "win_len": [70],
+  "steps": [35],
+
+  "drift_mode": [
+    "ks_alibi", "mmd", "energy"],
+
+  "state_logic": ["cosine", "kld"],
+
+  "kld_epsilon": [0.00006],
+
+  "max_state_num": [50],
+
+  "l_hist_size": [150],
+
+  "l_new_size": [1],
+
+  "ks_hist_min_size": [50],
+
+  "ks_alpha": [0.03],
+
+  "mmd_l_hist_size": [150],
+    "mmd_l_new_size": [3, 5],
+    "mmd_hist_min_size": [60],
+    "lambda_mmd": [0.001,0.0025, 0.005],
+
+    "energy_l_hist_size": [150],
+    "energy_l_new_size": [3, 5],
+    "energy_hist_min_size": [60],
+    "lambda_energy": [0.025],
+
+  "normalize_for_detectors": [
+    false
+  ],
+
+  "state_sim_threshold": [ 0.77],
+
+  "state_update_alpha": [
+    0.05
+  ],
+
+  "merge_every": [20,30],
+
+  "merge_threshold": [0.80,0.82,0.85],
+
+  "min_state_windows": [5],
+
+  "event_tolerance_k": [5],
+
+  "event_window_W": [15],
+
+  "event_fp_penalty": [0.11],
+
+  "state_penalty_lambda": [1.0],
+
+  "hidden_size": [128],
+
+  "epochs": [10],
+
+  "lr": [0.0001],
+
+  "dropout": [0.2],
+
+  "batch_size": [32],
+
+  "weight_decay": [1e-05],
+
+  "dim": [384],
+
+  "early_stopping_patience": [5]
+}, 
+  "BEIRStreamSim": {
+    "win_len": [50],
+    "steps": [25, 50],
+    "state_logic": ["cosine","kld"],
+    "l_hist_size": [150,200],
+    "l_new_size": [1],
+    "ks_hist_min_size": [80, 100],
+    "ks_alpha": [0.01, 0.05, 0.1 ],
+    "kld_epsilon": [
+      0.001,
+      0.0025
+    ],
+    "normalize_for_detectors": [
+      false,
+      true
+    ],
+    "state_sim_threshold": [
+      0.8,
+      0.85
+    ],
+    "state_update_alpha": [
+      0.05
+    ],
+    "merge_every": [
+      10
+    ],
+    "merge_threshold": [
+      0.85
+    ],
+    "min_state_windows": [
+      5
+    ],
+    "event_tolerance_k": [
+      5
+    ],
+    "event_window_W": [
+      15
+    ],
+    "event_fp_penalty": [
+      0.11
+    ],
+    "state_penalty_lambda": [
+      1.0
+    ],
+    "num_cycles": [
+      3
+    ]
+  },
+  "MINDStreamSim": {
+    "win_len": [
+      50
+    ],
+    "steps": [
+      25 , 50
+    ],
+    "hidden_size": [
+      128
+    ],
+    "epochs": [
+      10
+    ],
+    "lr": [
+      0.0001
+    ],
+    "dropout": [
+      0.2
+    ],
+    "batch_size": [
+      32
+    ],
+    "weight_decay": [
+      1e-05
+    ],
+    "dim": [
+      384
+    ],
+    "early_stopping_patience": [
+      5
+    ],
+    "ks_alpha": [
+      0.05
+    ],
+    "ks_hist_min_size": [
+      50
+    ],
+    "kld_epsilon": [
+      0.1
+    ],
+    "l_hist_size": [
+      200
+    ],
+    "l_new_size": [
+      20
+    ],
+    "mmd_l_hist_size": [
+      200
+    ],
+    "mmd_l_new_size": [
+      20
+    ],
+    "mmd_hist_min_size": [
+      50
+    ],
+    "lambda_mmd": [
+      0.001
+    ],
+    "state_sim_threshold": [
+      0.9
+    ],
+    "state_update_alpha": [
+      0.05
+    ],
+    "force_new_state_on_alarm": [
+      false
+    ],
+    "log_every": [
+      10
+    ],
+    "normalize_for_detectors": [
+      false
+    ],
+    "event_tolerance_k": [
+      5
+    ],
+    "event_window_W": [
+      10
+    ],
+    "event_fp_penalty": [
+      0.11
+    ],
+    "state_penalty_lambda": [
+      1.0
+    ],
+    "articles_per_category": [
+      500
+    ],
+    "num_cycles": [
+      3
+    ]
+  },
+  "KILTStreamSim": {
+  "win_len": [70],
+  "steps": [35, 40 ],
+
+  "state_logic": ["cosine", "kld"],
+  "kld_epsilon": [0.00005],
+  "max_state_num": [160],
+
+  "l_hist_size": [80],
+  "l_new_size": [1],
+  "ks_hist_min_size": [50],
+  "ks_alpha": [0.025],
+
+  "mmd_l_hist_size": [80],
+  "mmd_l_new_size": [3],
+  "mmd_hist_min_size": [50],
+  "lambda_mmd": [0.01, 0.025, 0.03, 0.05],
+
+   "energy_l_hist_size": [80],
+  "energy_l_new_size": [5],
+  "energy_hist_min_size": [50],
+  "energy_alpha": [0.025],
+  "lambda_energy": [0.025],
+
+  "normalize_for_detectors": [true],
+
+  "alarm_cooldown_k": [0],
+  
+
+    "cap": [30000],
+
+  "state_sim_threshold": [0.77],
+  "state_update_alpha": [0.05],
+
+  "merge_every": [100],
+  "merge_threshold": [0.77],
+  "min_state_windows": [10],
+
+  
+
+   "event_tolerance_k": [3],
+  "event_window_W": [15],
+  "event_fp_penalty": [0.11],
+  "state_penalty_lambda": [1.0],
+
+  "hidden_size": [128],
+  "epochs": [10],
+  "lr": [0.0001],
+  "dropout": [0.2],
+  "batch_size": [32],
+  "weight_decay": [1e-05],
+  "dim": [384],
+  "early_stopping_patience": [5]
+},
+  "PopQAStreamSim": {
+  "win_len": [50],
+  "steps": [25, 50],
+
+  "hidden_size": [128],
+  "epochs": [10],
+  "lr": [0.0001],
+  "dropout": [0.2],
+  "batch_size": [32],
+  "weight_decay": [1e-05],
+  "dim": [384],
+  "early_stopping_patience": [5],
+
+  "cap": [30000],
+
+  "l_hist_size": [100],
+  "l_new_size": [5],
+  "ks_hist_min_size": [50],
+  "ks_alpha": [0.01, 0.025, 0.05],
+
+  "mmd_alpha": [0.01, 0.025, 0.05],
+  "mmd_l_hist_size": [100],
+  "mmd_l_new_size": [5],
+  "mmd_hist_min_size": [50],
+  "lambda_mmd": [0.001],
+
+  "energy_alpha": [0.01, 0.025, 0.05],
+  "energy_l_hist_size": [100],
+  "energy_l_new_size": [5],
+  "energy_hist_min_size": [50],
+  "lambda_energy": [0.001],
+
+  "normalize_for_detectors": [true],
+
+  "state_logic": ["cosine", "kld"],
+  "state_sim_threshold": [0.92],
+
+  "kld_epsilon": [0.00001, 0.000025, 0.00005, 0.0001],
+  "max_state_num": [10],
+
+  "state_update_alpha": [0.05],
+  "force_new_state_on_alarm": [false],
+
+  "merge_every": [50],
+  "merge_threshold": [0.95],
+  "min_state_windows": [2],
+
+  "pointwise_tolerance_k": [1],
+  "alarm_cooldown_k": [5, 8],
+
+  "event_tolerance_k": [5, 8],
+  "event_window_W": [15],
+  "event_fp_penalty": [0.11],
+  "state_penalty_lambda": [1.0],
+
+  "log_every": [10]
+},
+  "MultiHopRAGStreamSim": {
+  "win_len": [40, 50],
+  "steps": [15, 20],
+
+  "hidden_size": [128],
+  "epochs": [10],
+  "lr": [0.0001],
+  "dropout": [0.2],
+  "batch_size": [32],
+  "weight_decay": [1e-05],
+  "dim": [384],
+  "early_stopping_patience": [5],
+
+  "cap": [10000],
+
+  "l_hist_size": [60, 80],
+  "l_new_size": [3],
+  "ks_hist_min_size": [30, 50],
+  "ks_alpha": [0.025, 0.05, 0.075],
+
+  "mmd_l_hist_size": [60, 80],
+  "mmd_l_new_size": [3],
+  "mmd_hist_min_size": [30, 50],
+  "mmd_alpha": [0.025, 0.05, 0.075],
+  "lambda_mmd": [0.001],
+
+  "energy_l_hist_size": [60, 80],
+  "energy_l_new_size": [3],
+  "energy_hist_min_size": [50],
+  "energy_alpha": [0.025, 0.05, 0.075, 0.1],
+  "lambda_energy": [0.001],
+
+  "normalize_for_detectors": [true],
+
+  "state_logic": [ "kld", "cosine"],
+  "state_sim_threshold": [0.90, 0.92],
+
+  "kld_epsilon": [0.00001, 0.000025, 0.00005, 0.0001],
+  "max_state_num": [9],
+
+  "state_update_alpha": [0.05],
+  "force_new_state_on_alarm": [false],
+
+  "merge_every": [50],
+  "merge_threshold": [0.95],
+  "min_state_windows": [2],
+
+  "pointwise_tolerance_k": [1, 2],
+  "alarm_cooldown_k": [0, 3],
+
+  "event_tolerance_k": [5, 8],
+  "event_window_W": [15],
+  "event_fp_penalty": [0.11],
+  "state_penalty_lambda": [1.0],
+
+  "log_every": [10]
+},
+  "RAGBenchStreamSim": {
+  "win_len": [70],
+  "steps": [70],
+
+  "hidden_size": [128],
+  "epochs": [10],
+  "lr": [0.0001],
+  "dropout": [0.2],
+  "batch_size": [32],
+  "weight_decay": [1e-05],
+  "dim": [384],
+  "early_stopping_patience": [5],
+
+  "cap": [30000],
+
+  "l_hist_size": [80],
+  "l_new_size": [5],
+  "ks_hist_min_size": [50],
+  "ks_alpha": [0.01, 0.025, 0.05],
+
+  "mmd_l_hist_size": [80],
+  "mmd_l_new_size": [5],
+  "mmd_hist_min_size": [50],
+  "mmd_alpha": [0.025, 0.05],
+  "lambda_mmd": [0.001],
+
+  "energy_l_hist_size": [80],
+  "energy_l_new_size": [5],
+  "energy_hist_min_size": [50],
+  "energy_alpha": [0.025, 0.05, 0.075],
+  "lambda_energy": [0.0025],
+
+  "normalize_for_detectors": [true],
+
+  "state_logic": ["cosine", "kld"],
+  "state_sim_threshold": [0.77],
+
+  "kld_epsilon": [0.000005, 0.00001, 0.000025, 0.00005],
+  "max_state_num": [8],
+
+  "state_update_alpha": [0.05],
+  "force_new_state_on_alarm": [false],
+
+  "merge_every": [50],
+  "merge_threshold": [0.95],
+  "min_state_windows": [2],
+
+  "pointwise_tolerance_k": [1],
+  "alarm_cooldown_k": [0],
+
+  "event_tolerance_k": [3, 5],
+  "event_window_W": [10, 15],
+  "event_fp_penalty": [0.11],
+  "state_penalty_lambda": [1.0],
+
+  "log_every": [10]
+},
+  "StateCacheQAStreamSim": {
+  "win_len": [20],
+  "steps": [10],
+  "hidden_size": [128],
+  "epochs": [10],
+  "lr": [0.0001],
+  "dropout": [0.2],
+  "batch_size": [32],
+  "weight_decay": [0.00001],
+  "dim": [384],
+  "early_stopping_patience": [5],
+
+  "ks_alpha": [0.05],
+  "mmd_alpha": [0.05],
+  "energy_alpha": [0.05],
+
+  "ks_hist_min_size": [20],
+  "mmd_hist_min_size": [20],
+  "energy_hist_min_size": [20],
+
+  "l_hist_size": [40],
+  "l_new_size": [5],
+  "mmd_l_hist_size": [40],
+  "mmd_l_new_size": [5],
+  "energy_l_hist_size": [40],
+  "energy_l_new_size": [5],
+
+  "lambda_mmd": [0.001],
+  "lambda_energy": [0.001],
+
+  "kld_epsilon": [0.001],
+  "state_logic": ["cosine", "kld"],
+  "max_state_num": [50],
+  "state_sim_threshold": [0.90],
+  "state_update_alpha": [0.05],
+  "force_new_state_on_alarm": [false],
+
+  "log_every": [10],
+  "normalize_for_detectors": [false],
+
+  "event_tolerance_k": [3],
+  "event_window_W": [10],
+  "event_fp_penalty": [0.11],
+  "pointwise_tolerance_k": [1],
+  "alarm_cooldown_k": [0],
+  "state_penalty_lambda": [1.0],
+
+  "cap": [180]
+}
+}

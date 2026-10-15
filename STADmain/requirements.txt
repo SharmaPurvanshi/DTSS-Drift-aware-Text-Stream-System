@@ -1,0 +1,33 @@
+# DTSS thesis experiment requirements
+# Recommended Python version: 3.10
+
+# Core scientific stack
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+scikit-learn>=1.3
+tqdm>=4.66
+
+# Deep learning / embeddings
+torch>=2.0
+transformers>=4.40
+sentence-transformers>=2.7
+accelerate>=0.29
+
+# Drift detection
+alibi-detect>=0.12
+
+# Retrieval / vector search
+faiss-cpu>=1.7.4
+
+# Datasets and data loading
+datasets>=2.18
+huggingface-hub>=0.22
+
+# Plotting and thesis figures
+matplotlib>=3.7
+seaborn>=0.13
+
+# Utilities
+PyYAML>=6.0
+joblib>=1.3
